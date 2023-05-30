@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Fashion</title>
+    <link rel="stylesheet" href="./css/home/main_style.css">
+    <script src="./js/home/script.js" defer></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Nanum+Pen+Script&display=swap"
+        rel="stylesheet">
+
+    <!-- 상단바 -->
+    <!-- slider stylesheet -->
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="./css_cryptop/home/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="./css_cryptop/home/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="./css_cryptop/home/responsive.css" rel="stylesheet" />
+
+    
+    <!--기온에 맞는 랜덤 옷-->
+    <link rel="stylesheet" href="./css/home/cloth_style.css">
+    <link rel="stylesheet" href="./css/home/toggle.css">
+    <script type="text/javascript" src="./cjs/home/cloths_M.js"></script>
+    <script type="text/javascript" src="./cjs/home/cloths_W.js"></script>
+    <script type="text/javascript" src="./cjs/home/temp_logic.js"></script>
+</head>
+<body>
+<!-- 상단바 -->
+<!-- header section strats -->
+<header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="/">
+            <span> Weather App</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/about"> About </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/how"> How </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/weather"> Weather_Fashion <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fashiontest"> Fashion style test </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/logout"> Logout </a>
+                </li>
+
+            </ul>
+            <div class="user_option">
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+                
+            </div>
+            </div>
+        </div>
+        </nav>
+    </div>
+</header>
+
+<!-- 날씨 -->
+<h2 class="city"
+    style="text-align: center; font-size: 80px; font-family: 'Dongle' !important; color: rgb(58, 101, 182);">패션을 통하여 날씨를
+    알아보자</h2>
+<div>
+    <button type="button" class="wcity" id="seoul">서울</button>
+    <button type="button" class="wcity" id="Gyeonggi">경기도</button>
+    <button type="button" class="wcity" id="incheon">인천</button>
+    <button type="button" class="wcity" id="busan">부산</button>
+</div>
+
+<div class="card">
+    <div class="search">
+        <input type="text" class="search-bar" placeholder="Search" list="cities">
+        <datalist id="cities">
+            <option value="Jeju"></option>
+            <option value="Daejeon"></option>
+            <option value="Chungnam"></option>
+            <option value="Daegu"></option>
+        </datalist>
+        <!-- 성별 토글 버튼 -->
+        <button class="cam">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+            </svg>
+        </button>
+        <input class="hor" type="checkbox" id="toggle" hidden>
+        <label for="toggle" class="toggleSwitch">
+            <span class="toggleButton"></span>
+        </label>
+
+        <!-- 날씨 정보 -->
+    </div>
+    <h1 style="margin: auto; text-align: center; font-size: 60px;">내일의 날씨</h1>
+    <div class="weather loading">
+        <div style="float: left; width: 33%; text-align: center; font-size: 40px;">
+
+            <h1 class="temp" style="font-size: 50px;"></h1>
+            <img class="icon">
+            <div class="description"> </div>
+            <div class="humidity"></div>
+            <div class="wind"></div>
+            <div>아침</div>
+        </div>
+
+        <div style="float: left; width: 33%; text-align: center; font-size: 40px;">
+
+            <h1 class="temp1" style="font-size: 50px;"></h1>
+            <img class="icon1">
+            <div class="description1">로딩중</div>
+            <div class="humidity1"></div>
+            <div class="wind1"></div>
+            <div>점심</div>
+        </div>
+
+        <div style="float: left; width: 33%; text-align: center; font-size: 40px;">
+
+            <h1 class="temp2" style="font-size: 50px;"></h1>
+            <img class="icon2">
+            <div class="description2"> </div>
+            <div class="humidity2"></div>
+            <div class="wind2"></div>
+            <div>저녁</div>
+        </div>
+    </div>
+</div>
+
+<!--랜덤 옷-->
+<div style="width: 100%;">
+</div>
+<div class="hor_d">
+    <div class="hor">
+        <div class="Character">
+            <img src="cImg/nullPerson.png" id="chara-img0" style="width:100%;height:100%;">
+        </div>
+        <div class="clot-div">
+            <img src="../../public/cImg/Clean.png" id="chara-clo0" style="width:100%;height:100%;">
+        </div>
+        <div class="sho-div">
+            <img src="../../public/cImg/Clean.png" id="chara-sho0" style="width:100%;height:100%;">
+        </div>
+        <div class="pant-div">
+            <img src="../../public/cImg/Clean.png" id="chara-pan0" style="width:100%;height:100%;">
+        </div>
+        <div class="umb-div">
+            <img src="../../public/cImg/Clean.png" id="chara-umb0" style="width:100%;height:100%;">
+        </div>
+    </div>
+    <div class="hor">
+        <div class="Character">
+            <img src="cImg/nullPerson.png" id="chara-img1" style="width:100%;height:100%;">
+        </div>
+        <div class="clot-div">
+            <img src="../../public/cImg/Clean.png" id="chara-clo1" style="width:100%;height:100%;">
+        </div>
+        <div class="sho-div">
+            <img src="../../public/cImg/Clean.png" id="chara-sho1" style="width:100%;height:100%;">
+        </div>
+        <div class="pant-div">
+            <img src="cImg/Clean.png" id="chara-pan1" style="width:100%;height:100%;">
+        </div>
+        <div class="umb-div">
+            <img src="../../public/cImg/Clean.png" id="chara-umb1" style="width:100%;height:100%;">
+        </div>
+    </div>
+    <div class="hor">
+        <div class="Character">
+            <img src="../../public/cImg/Clean.png" id="chara-img2" style="width:100%;height:100%;">
+        </div>
+        <div class="clot-div">
+            <img src="../../public/cImg/Clean.png" id="chara-clo2" style="width:100%;height:100%;">
+        </div>
+        <div class="sho-div">
+            <img src="../../public/cImg/Clean.png" id="chara-sho2" style="width:100%;height:100%;">
+        </div>
+        <div class="pant-div">
+            <img src="../../public/cImg/Clean.png" id="chara-pan2" style="width:100%;height:100%;">
+        </div>
+        <div class="umb-div">
+            <img src="../../public/cImg/Clean.png" id="chara-umb2" style="width:100%;height:100%;">
+        </div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="./cjs/home/clothesChange.js" ></script>
+
+
+</body>
+</html>

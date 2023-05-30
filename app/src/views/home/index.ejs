@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Weather Main</title>
+
+    <!-- slider stylesheet -->
+    <!-- slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" href = "/css_cryptop/home/bootstrap.css">
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href = "/css_cryptop/home/style.css">
+    <!-- responsive style -->
+    <link rel="stylesheet" href = "/css_cryptop/home/responsive.css">
+</head>
+
+<body>
+
+    <!-- 상단바 -->
+    <div class="hero_area">
+        <!-- header section strats -->
+        <header class="header_section">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a class="navbar-brand" href="/">
+                <span>
+                Weather App
+                </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/about"> About </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="/how"> How </a>
+                    </li>
+
+                    
+                    <!-- 로그인시 보여질 내용 -->
+                    <% if (enter === 1) { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/weather">Weather_Fashion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/fashiontest"> Fashion style test </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                    <% } else { %>
+                    <!-- 로그아웃된 상태에서 보여질 내용 -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Sign Up</a>
+                        </li>
+                    <% } %>
+
+
+                </ul>
+                <div class="user_option">
+                    <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                    <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                    </form>
+                </div>
+                </div>
+            </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- 내용 시작 -->
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <div class="box">
+                    <div class="row">
+                        <div class="col-md-7">
+                        <div class="detail-box">
+                            <div>
+                            <h1>
+                                Weather Fashion
+                            </h1>
+                            <h3>
+                                오늘의 날씨를 확인하고 날씨에 맞는 옷을 추천 받으세요.
+                            </h3>
+                            <div class="">
+                                <!-- 로그인시 보여질 내용 -->
+                                <% if (enter === 1) { %>
+                                <a href="/weather"> 옷 추천받기 </a>
+                                <% } else { %>
+                                <!-- 로그아웃된 상태에서 보여질 내용 -->
+                                    <a href="/login"> 로그인 후 옷 추천받기 </a>
+                                <% } %>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-5">
+                        <div class="img-box">
+                            <img src="./images/main2.jpg" alt="" />
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <div class="container">
+                    <div class="box">
+                    <div class="row">
+                        <div class="col-md-7">
+                        <div class="detail-box">
+                            <div>
+                                <h1>
+                                    Fashion Test
+                                </h1>
+                                <h2>
+                                    자신의 옷 취향이 어떤지 알아보세요!
+                                </h2>
+                                <div class="">
+                                    <!-- 로그인시 보여질 내용 -->
+                                    <% if (enter === 1) { %>
+                                    <a href="/weather"> 옷 추천받기 </a>
+                                    <% } else { %>
+                                    <!-- 로그아웃된 상태에서 보여질 내용 -->
+                                        <a href="/login">로그인 후 옷 추천받기 </a>
+                                    <% } %>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-5">
+                        <div class="img-box">
+                            <img src="./images/main2.jpg" alt="" />
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <div class="container">
+                    <div class="box">
+                    <div class="row">
+                        <div class="col-md-7">
+                        <div class="detail-box">
+                            <div>
+                                <h1>
+                                    Community
+                                </h1>
+                                <h2>
+                                    서로의 데일리룩을 자랑해 보세요!
+                                </h2>
+                                <div class="">
+                                    <!-- 로그인시 보여질 내용 -->
+                                    <% if (enter === 1) { %>
+                                    <a href="/weather"> 옷 추천받기 </a>
+                                    <% } else { %>
+                                    <!-- 로그아웃된 상태에서 보여질 내용 -->
+                                        <a href="/login">로그인 후 옷 추천받기 </a>
+                                    <% } %>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <div class="container">
+                    <div class="box">
+                    <div class="row">
+                        <div class="col-md-7">
+                        <div class="detail-box">
+                            <div>
+                                <h1>
+                                    Weather App
+                                </h1>
+                                <h2>
+                                    오늘의 날씨와 날씨에 맞는 옷을 추천 받으세요.
+                                </h2>
+                                <div class="">
+                                    <!-- 로그인시 보여질 내용 -->
+                                    <% if (enter === 1) { %>
+                                    <a href="/weather"> 옷 추천받기 </a>
+                                    <% } else { %>
+                                    <!-- 로그아웃된 상태에서 보여질 내용 -->
+                                        <a href="/login">로그인 후 옷 추천받기 </a>
+                                    <% } %>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                <div class="container">
+                    <div class="box">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="detail-box">
+                                    <div>
+                                        <h1>
+                                            Weather App
+                                        </h1>
+                                        <h2>
+                                            오늘의 날씨와 날씨에 맞는 옷을 추천 받으세요.
+                                        </h2>
+                                        <div class="">
+                                            <!-- 로그인시 보여질 내용 -->
+                                            <% if (enter === 1) { %>
+                                            <a href="/weather"> 옷 추천받기 </a>
+                                            <% } else { %>
+                                            <!-- 로그아웃된 상태에서 보여질 내용 -->
+                                            <a href="/login">로그인 후 옷 추천받기 </a>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+    <!-- end slider section -->
+    </div>
+
+
+    <!-- end app section -->
+
+    <!-- info section -->
+    <section class="info_section layout_padding">
+    <div class="container">
+        <div class="row">
+        <div class="col-md-3">
+            <div class="info_contact">
+            <div class="info_logo">
+                <a href="/">
+                <span>
+                    Weather App
+                </span>
+                </a>
+            </div>
+            <h5>
+                Contact Us
+            </h5>
+            <div>
+                <div class="img-box">
+                <img src="./images/location.png" width="18px" alt="" />
+                </div>
+                <p>
+                명지대 자연캠퍼스
+                </p>
+            </div>
+            <div>
+                <div class="img-box">
+                <img src="./images/phone.png" width="18px" alt="" />
+                </div>
+                <p>
+                +82 031-330-6114
+                </p>
+            </div>
+            <div>
+                <div class="img-box">
+                <img src="./images/envelope.png" width="18px" alt="" />
+                </div>
+                <p>
+                yiminseok@naver.com
+                </p>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info_info">
+            <h5>
+                Web Developers
+            </h5>
+            <p>
+                이동근, 이민석, 남성민, 이유정
+            </p>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="info_links">
+            <h5>
+                Useful Links
+            </h5>
+            <ul>
+                <li>
+                <a href="https://www.fashionn.com/index.php?device=pc">
+                    패션업계/연예인패션/콜렉션리뷰 등 다양한 패션 정보를 접할 수 있는 사이트(패션엔)
+                </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="info_form ">
+            <h5>
+                FashionLetter
+            </h5>
+            <form action="">
+                <input type="email" placeholder="Enter your email" />
+                <button>
+                Subscribe
+                </button>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- end info_section -->
+
+    <!-- footer section -->
+    <section class="container-fluid footer_section">
+    <p>
+        &copy; 2023 All Rights Reserved By
+        <a href="https://html.design/">Lee</a>
+    </p>
+    </section>
+    <!-- footer section -->
+
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- owl carousel script 
+    -->
+    <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 0,
+        navText: [],
+        center: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        responsive: {
+        0: {
+            items: 1
+        },
+        1000: {
+            items: 3
+        }
+        }
+    });
+    </script>
+    <!-- end owl carousel script -->
+</body>
+
+</html>

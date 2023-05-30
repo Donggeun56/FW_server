@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<!-- Basic -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- Mobile Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<!-- Site Metas -->
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+
+<title>Weather About</title>
+
+<!-- slider stylesheet -->
+<!-- slider stylesheet -->
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+<!-- bootstrap core css -->
+<link rel="stylesheet" type="text/css" href="./css_cryptop/home/bootstrap.css" />
+
+<!-- fonts style -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+<!-- Custom styles for this template -->
+<link href="./css_cryptop/home/style.css" rel="stylesheet" />
+<!-- responsive style -->
+<link href="./css_cryptop/home/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+<!-- <div class="hero_area"> -->
+    <!-- header section strats -->
+    <header class="header_section">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="/">
+            <span>
+            Weather App
+            </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                <a class="nav-link" href="/">Home </a>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link" href="/about"> About <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/how"> How </a>
+                </li>
+
+                <!-- 로그인시 보여질 내용 -->
+                <% if (enter === 1) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/weather">Weather_Fashion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/fashiontest"> Fashion style test </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                <% } else { %>
+                <!-- 로그아웃된 상태에서 보여질 내용 -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Sign Up</a>
+                    </li>
+                <% } %>
+                
+            </ul>
+            <div class="user_option">
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+            </div>
+            </div>
+        </div>
+        </nav>
+    </div>
+    </header>
+    <!-- end header section -->
+</div>
+
+<!-- about section -->
+
+<!-- how section -->
+<section class="how_section layout_padding">
+    <div class="heading_container">
+    <h2>
+        About Weather Fashion Web
+    </h2>
+    </div>
+    <div class="how_container">
+    <div class="box">
+        <div class="img-box">
+            <img src="/images/2.png">
+        </div>
+        <div class="detail-box">
+        <h5>
+            날씨 정보 제공
+        </h5>
+        <p>
+            아침, 점심, 저녁의 날씨 정보를 나타낸다. 여러 날씨 정보들을 표시하여 사람들이 패션을 선택하는데 도움을 주고자 하였다. 
+        </p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="img-box">
+            <img src="/images/3.png">
+        </div>
+        <div class="detail-box">
+        <h5>
+            옷 추천
+        </h5>
+        <p>
+            날씨에 따른 옷을 귀여운 아바타를 통해 시각화 하여 추천해줌
+        </p>
+        </div>
+    </div>
+    <div class="box">
+        <div class="img-box">
+            <img src="/images/1.png">
+        </div>
+        <div class="detail-box">
+        <h5>
+            패션 스타일 검사 기능
+        </h5>
+        <p>
+            재미로 보는 스타일 검사
+        </p>
+        </div>
+    </div>
+<!-- end about section -->
+
+
+<script type="text/javascript" src="js_cryptop/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js_cryptop/bootstrap.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+</script>
+<!-- owl carousel script 
+    -->
+<script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 0,
+    navText: [],
+    center: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    responsive: {
+        0: {
+        items: 1
+        },
+        1000: {
+        items: 3
+        }
+    }
+    });
+</script>
+<!-- end owl carousel script -->
+</body>
+
+</html>
